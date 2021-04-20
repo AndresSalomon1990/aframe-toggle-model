@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Toggle Model</title>
+
+  <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+
+  <script type="text/javascript" src="./toggle-component.js"></script>
+</head>
+<body>
+  <a-scene>
+    <a-assets>
+      <a-asset-item id="assetModelEsquinero" src="./assets/LivingEsquineroMeloAzulClaro.glb"></a-asset-item>
+      <a-asset-item id="assetModelLara" src="./assets/LivingLara.glb"></a-asset-item>
+    </a-assets>
+
+    <a-camera
+      id="camera"
+      position="0 2 0"
+      raycaster="objects: .cantap"
+      cursor="fuse: false; rayOrigin: mouse;">
+    </a-camera>
+
+    <a-entity
+      id="model"
+      position="0 0 -4"
+      gltf-model="#assetModelEsquinero"
+      class="cantap"
+      toggle>
+    </a-entity>
+  </a-scene>
+</body>
+</html>
